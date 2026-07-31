@@ -22,5 +22,7 @@ class CartPage:
         return len(self.driver.find_elements(*self.CART_ITEMS))
 
     def click_checkout(self):
-        self.wait.until(EC.element_to_be_clickable(self.CHECKOUT_BTN)).click()
+        btn = self.wait.until(EC.element_to_be_clickable(self.CHECKOUT_BTN))
+        self.driver.execute_script("arguments[0].scrollIntoView();", btn)
+        btn.click()
         self.wait.until(EC.url_contains("checkout"))
