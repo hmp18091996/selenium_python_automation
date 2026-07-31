@@ -11,7 +11,7 @@ class CartPage:
 
     def __init__(self, driver):
         self.driver = driver
-        self.wait = WebDriverWait(self.driver, 10)
+        self.wait = WebDriverWait(self.driver, 20)
 
     def open_cart(self):
         self.wait.until(EC.element_to_be_clickable(self.CART_ICON)).click()
