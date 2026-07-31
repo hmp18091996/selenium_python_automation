@@ -23,3 +23,4 @@ class CartPage:
 
     def click_checkout(self):
         self.wait.until(EC.element_to_be_clickable(self.CHECKOUT_BTN)).click()
+        self.wait.until(EC.url_contains("checkout"))
